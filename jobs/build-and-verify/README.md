@@ -43,3 +43,16 @@ Parameter:
 
 Es muss noch definiert werden, wann der Job jeweils getriggered werden soll:
 Bsp: @hourly
+
+Serviceaccount für credential appuio_monitoring_sa_token auf APPUiO einrichten:
+```
+$ oc create serviceaccount jenkinsuser
+$ oc policy add-role-to-user admin --serviceaccount=jenkinsuser -n `<your_project>`
+$ oc describe serviceaccount jenkinsuser 
+$ oc describe secret jenkinsuser-token-ykhcp
+```
+Das angezeigte token auf dem jenkins in einem credential mit dem Namen  appuio_monitoring_sa_token im passwort feld erfassen.
+
+
+appuio_monitoring_sa_token
+
