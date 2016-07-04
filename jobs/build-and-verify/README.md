@@ -29,6 +29,8 @@ $ oc new-app https://github.com/appuio/example-php-sti-helloworld.git --name=bui
 $ oc expose svc buildsource2image
 ```
 
+Des Weiteren kann in der Deployment Config auf maxUnavailable: 0% gestellt werden, damit die Route immer verfügbar ist, und das Deployment erst abgeschlossen ist, wenn der neue Pod wirklich da ist.
+
 
 ### Jenkins Job
 Auf dem Jenkins ein neuer Pipeline Job einrichten und entsprechend das jenkins.groovy script im aktuellen Verzeichnis angeben.
