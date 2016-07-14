@@ -42,6 +42,7 @@ Parameter:
 * OSE_NAMESPACE, OpenShift Project
 * OSE_BUILDCONFIG, OpenShift Buildconfig name eg. builddocker or buildsource2image for the examples in this README
 * OSE_DEPLOYMENTCONFIG, OpenShift Deployment name eg. builddocker or buildsource2image for the examples in this README
+* OSE_CREDENTIAL_ID
 
 Es muss noch definiert werden, wann der Job jeweils getriggered werden soll:
 Bsp: @hourly

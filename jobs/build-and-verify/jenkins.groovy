@@ -12,7 +12,7 @@ node {
         // Stage Build
         stage 'build'
 
-        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'appuio_monitoring_sa_token', passwordVariable: 'openshift_password', usernameVariable: 'openshift_username']]) {
+        withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: OSE_CREDENTIAL_ID, passwordVariable: 'openshift_password', usernameVariable: 'openshift_username']]) {
             
             openshiftBuild apiURL: OSE_MASTER, authToken: env.openshift_password, bldCfg: OSE_BUILDCONFIG, buildName: '', checkForTriggeredDeployments: 'true', commitID: "", namespace: OSE_NAMESPACE, showBuildLogs: 'true', verbose: 'false', waitTime: ''
             
