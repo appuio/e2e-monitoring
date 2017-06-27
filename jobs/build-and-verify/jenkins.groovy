@@ -21,7 +21,8 @@ node {
 
         // Stage smoke Tests
         stage 'smoke tests'
-        sleep 5
+        def waittime = params.OSE_DEPLOYWAITTIME ?: "20"
+        sleep waittime.toInteger()
 
         sh("""curl -s -o /dev/null -w "%{http_code}" $OSE_APPURL > code.txt""")
         status = readFile('code.txt')
