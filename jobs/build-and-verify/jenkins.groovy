@@ -1,6 +1,6 @@
 node {
     try {
-        timeout(time: 10, unit: 'MINUTES') {
+        timeout(time: 30, unit: 'MINUTES') {
 
             // configure Tools and Environment.
             def buildNumber = "$env.BUILD_NUMBER"
